@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #09090f;
+  color: #ededf7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.45);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.7);
+}
+
+@layer utilities {
+  .card {
+    @apply bg-white/[0.04] border border-white/[0.08] rounded-2xl;
+  }
+
+  .section {
+    @apply py-20 md:py-32;
+  }
+
+  .container-base {
+    @apply max-w-6xl mx-auto px-6 md:px-12;
+  }
+
+  .label {
+    @apply text-xs font-medium tracking-widest uppercase text-text-muted;
+  }
+
+  .heading-xl {
+    @apply font-onest text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight;
+  }
+
+  .heading-lg {
+    @apply font-onest text-3xl md:text-5xl font-bold leading-tight tracking-tight;
+  }
+
+  .heading-md {
+    @apply font-onest text-lg md:text-xl font-semibold;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white
+           px-6 py-3.5 rounded-xl font-medium transition-all duration-200
+           hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/25;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 border border-white/[0.12] text-text-base
+           hover:bg-white/[0.05] hover:border-white/[0.22] px-6 py-3.5 rounded-xl
+           font-medium transition-all duration-200;
+  }
+}
