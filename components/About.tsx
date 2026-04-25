@@ -61,7 +61,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="flex gap-4 mt-8">
+            <div className="flex flex-wrap gap-3 mt-8">
               <a
                 href="https://t.me/yurazlab"
                 target="_blank"
@@ -75,6 +75,14 @@ export default function About() {
                 className="btn-ghost text-sm"
               >
                 Email
+              </a>
+              <a
+                href="https://github.com/yurazlab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost text-sm"
+              >
+                GitHub
               </a>
             </div>
           </div>
