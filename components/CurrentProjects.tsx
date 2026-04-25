@@ -2,7 +2,7 @@
 
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const neuroScreenshots = [
   { src: "/cases/neuro-electric/ne-05-photo-panel.jpg", caption: "Анализ фото щитка" },
@@ -55,30 +55,44 @@ const inProgress = [
 ];
 
 function ScreenshotsGallery() {
-  const [lightbox, setLightbox] = useState<string | null>(null);
+  const [idx, setIdx] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (idx === null) return;
+
+    document.body.style.overflow = "hidden";
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIdx(null);
+      if (e.key === "ArrowRight") setIdx((i) => (i !== null && i < neuroScreenshots.length - 1 ? i + 1 : i));
+      if (e.key === "ArrowLeft") setIdx((i) => (i !== null && i > 0 ? i - 1 : i));
+    };
+    window.addEventListener("keydown", onKey);
+
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [idx]);
+
+  const current = idx !== null ? neuroScreenshots[idx] : null;
 
   return (
     <>
       <div>
         <p className="label mb-3">Примеры диалогов с ботом</p>
         <div className="flex gap-3 overflow-x-auto pb-2">
-          {neuroScreenshots.map((s) => (
+          {neuroScreenshots.map((s, i) => (
             <button
               key={s.src}
-              onClick={() => setLightbox(s.src)}
+              onClick={() => setIdx(i)}
               className="flex-shrink-0 group text-left"
             >
               <div
                 className="relative rounded-xl overflow-hidden border border-white/[0.08] group-hover:border-accent/40 transition-colors duration-200"
                 style={{ width: "80px", height: "176px" }}
               >
-                <Image
-                  src={s.src}
-                  alt={s.caption}
-                  fill
-                  className="object-cover object-top"
-                  sizes="80px"
-                />
+                <Image src={s.src} alt={s.caption} fill className="object-cover object-top" sizes="80px" />
               </div>
               <p className="text-text-muted text-[10px] mt-1.5 text-center leading-tight" style={{ width: "80px" }}>
                 {s.caption}
@@ -86,31 +100,64 @@ function ScreenshotsGallery() {
             </button>
           ))}
         </div>
-        <p className="text-text-muted text-xs mt-2">Нажми на скрин — откроется полностью</p>
+        <p className="text-text-muted text-xs mt-2">Нажми на скрин — откроется полностью · ← → для навигации · Esc для закрытия</p>
       </div>
 
       {/* Lightbox */}
-      {lightbox && (
+      {current && idx !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-          onClick={() => setLightbox(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm"
+          onClick={() => setIdx(null)}
         >
-          <div className="relative max-h-[90vh] max-w-[400px] w-full">
+          {/* Image container */}
+          <div
+            className="relative flex items-center justify-center"
+            style={{ maxHeight: "90vh", maxWidth: "min(420px, 90vw)" }}
+            onClick={(e) => e.stopPropagation()}
+          >
             <Image
-              src={lightbox}
-              alt="Диалог с НейроЭлектрик"
-              width={400}
-              height={880}
-              className="rounded-2xl w-full h-auto object-contain"
-              onClick={(e) => e.stopPropagation()}
+              src={current.src}
+              alt={current.caption}
+              width={420}
+              height={924}
+              className="rounded-2xl object-contain"
+              style={{ maxHeight: "90vh", width: "auto", height: "auto" }}
+              priority
             />
+
+            {/* Caption */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-dark/80 rounded-full text-text-muted text-xs whitespace-nowrap">
+              {current.caption} · {idx + 1} / {neuroScreenshots.length}
+            </div>
+
+            {/* Close */}
             <button
-              onClick={() => setLightbox(null)}
+              onClick={() => setIdx(null)}
               className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark/80 border border-white/[0.15] text-text-muted hover:text-text-base flex items-center justify-center text-sm transition-colors"
             >
               ✕
             </button>
           </div>
+
+          {/* Prev */}
+          {idx > 0 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); setIdx(idx - 1); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/80 border border-white/[0.15] text-text-base hover:border-accent/40 flex items-center justify-center transition-colors"
+            >
+              ←
+            </button>
+          )}
+
+          {/* Next */}
+          {idx < neuroScreenshots.length - 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); setIdx(idx + 1); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/80 border border-white/[0.15] text-text-base hover:border-accent/40 flex items-center justify-center transition-colors"
+            >
+              →
+            </button>
+          )}
         </div>
       )}
     </>
