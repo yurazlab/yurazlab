@@ -1,4 +1,17 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+
+const neuroScreenshots = [
+  { src: "/cases/neuro-electric/ne-05-photo-panel.jpg", caption: "Анализ фото щитка" },
+  { src: "/cases/neuro-electric/ne-06-voice.jpg", caption: "Голосовой запрос" },
+  { src: "/cases/neuro-electric/ne-01-wiring-advice.jpg", caption: "Совет по разводке" },
+  { src: "/cases/neuro-electric/ne-04-cable-calc.jpg", caption: "Расчёт кабеля" },
+  { src: "/cases/neuro-electric/ne-03-panel-72.jpg", caption: "Выбор размера щита" },
+  { src: "/cases/neuro-electric/ne-02-rewiring-total.jpg", caption: "Смета замены проводки" },
+];
 
 const completed = [
   {
@@ -12,6 +25,7 @@ const completed = [
     stack: ["Python", "Claude API", "Whisper API", "Telegram Bot", "EU VPS"],
     link: "https://t.me/neuro_electric_bot",
     linkLabel: "@neuro_electric_bot",
+    hasScreenshots: true,
   },
   {
     status: "Запущен",
@@ -24,6 +38,7 @@ const completed = [
     stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Timeweb"],
     link: "https://sellershelp.ru",
     linkLabel: "sellershelp.ru",
+    hasScreenshots: false,
   },
 ];
 
@@ -38,6 +53,69 @@ const inProgress = [
     stack: ["Next.js", "TypeScript", "Supabase", "AI", "Python"],
   },
 ];
+
+function ScreenshotsGallery() {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  return (
+    <>
+      <div>
+        <p className="label mb-3">Примеры диалогов с ботом</p>
+        <div className="flex gap-3 overflow-x-auto pb-2">
+          {neuroScreenshots.map((s) => (
+            <button
+              key={s.src}
+              onClick={() => setLightbox(s.src)}
+              className="flex-shrink-0 group text-left"
+            >
+              <div
+                className="relative rounded-xl overflow-hidden border border-white/[0.08] group-hover:border-accent/40 transition-colors duration-200"
+                style={{ width: "80px", height: "176px" }}
+              >
+                <Image
+                  src={s.src}
+                  alt={s.caption}
+                  fill
+                  className="object-cover object-top"
+                  sizes="80px"
+                />
+              </div>
+              <p className="text-text-muted text-[10px] mt-1.5 text-center leading-tight" style={{ width: "80px" }}>
+                {s.caption}
+              </p>
+            </button>
+          ))}
+        </div>
+        <p className="text-text-muted text-xs mt-2">Нажми на скрин — откроется полностью</p>
+      </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <div className="relative max-h-[90vh] max-w-[400px] w-full">
+            <Image
+              src={lightbox}
+              alt="Диалог с НейроЭлектрик"
+              width={400}
+              height={880}
+              className="rounded-2xl w-full h-auto object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark/80 border border-white/[0.15] text-text-muted hover:text-text-base flex items-center justify-center text-sm transition-colors"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
 
 export default function CurrentProjects() {
   return (
@@ -72,9 +150,7 @@ export default function CurrentProjects() {
 
               <div>
                 <h3 className="heading-md text-text-base mb-2">{p.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {p.description}
-                </p>
+                <p className="text-text-muted text-sm leading-relaxed">{p.description}</p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-3">
@@ -87,6 +163,8 @@ export default function CurrentProjects() {
                   <p className="text-text-base text-sm leading-snug">{p.result}</p>
                 </div>
               </div>
+
+              {p.hasScreenshots && <ScreenshotsGallery />}
 
               <div className="flex flex-wrap gap-2 mt-auto">
                 {p.stack.map((tech) => (
@@ -117,9 +195,7 @@ export default function CurrentProjects() {
 
               <div>
                 <h3 className="heading-md text-text-base mb-2">{p.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {p.description}
-                </p>
+                <p className="text-text-muted text-sm leading-relaxed">{p.description}</p>
               </div>
 
               <div className="p-4 bg-white/[0.03] rounded-xl border border-white/[0.06]">
