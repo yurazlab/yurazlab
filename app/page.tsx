@@ -4,6 +4,7 @@ import CurrentProjects from "@/components/CurrentProjects";
 import GptTools from "@/components/GptTools";
 import Services from "@/components/Services";
 import HowIWork from "@/components/HowIWork";
+import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
         <GptTools />
         <Services />
         <HowIWork />
+        <Pricing />
         <About />
         <Contact />
       </main>

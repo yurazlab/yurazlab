@@ -6,6 +6,7 @@ import Link from "next/link";
 const links = [
   { label: "Проекты", href: "#projects" },
   { label: "Услуги", href: "#services" },
+  { label: "Цены", href: "#pricing" },
   { label: "Обо мне", href: "#about" },
   { label: "Контакт", href: "#contact" },
 ];
