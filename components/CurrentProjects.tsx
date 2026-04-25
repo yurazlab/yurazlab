@@ -2,6 +2,20 @@ import { ExternalLink } from "lucide-react";
 
 const completed = [
   {
+    status: "Тестирование",
+    statusColor: "text-cyan",
+    title: "НейроЭлектрик — AI-бот для электриков",
+    description:
+      "Первый в России AI-ассистент для частных электриков. Принимает текст, фото щитка и голосовые — отвечает как опытный коллега: план работ, материалы с ценами в ₽, ссылки на ПУЭ 7. Работает в Telegram 24/7.",
+    task: "Дать электрику ответ на объекте за 5–10 секунд — без поиска, без звонков",
+    result: "MVP запущен, идёт живое тестирование с реальным электриком",
+    stack: ["Python", "Claude API", "Whisper API", "Telegram Bot", "EU VPS"],
+    link: "https://t.me/neuro_electric_bot",
+    linkLabel: "@neuro_electric_bot",
+  },
+  {
+    status: "Запущен",
+    statusColor: "text-emerald-400",
     title: "Сайт агентства SellersHelp",
     description:
       "Корпоративный сайт для агентства по продвижению на маркетплейсах Wildberries и Ozon. Полный цикл: дизайн, разработка, деплой.",
@@ -15,22 +29,13 @@ const completed = [
 
 const inProgress = [
   {
-    status: "В работе",
-    statusClass: "text-cyan",
-    title: "AI-бот для маркетплейсов",
-    description:
-      "Автоматизирует ответы на типовые вопросы покупателей на Wildberries и Ozon. Понимает контекст и отвечает как живой менеджер.",
-    task: "Освободить команду от рутинных диалогов с покупателями",
-    stack: ["Python", "Telegram Bot API", "OpenAI API"],
-  },
-  {
     status: "В разработке",
     statusClass: "text-accent-light",
     title: "Цифровая экосистема для маркетплейсов",
     description:
-      "Комплекс инструментов для управления бизнесом: аналитика, автоматизация закупок, единый дашборд для всей команды.",
-    task: "Объединить все рабочие процессы в одну управляемую систему",
-    stack: ["Next.js", "TypeScript", "AI", "API-интеграции"],
+      "Комплекс SaaS-инструментов для продавцов WB и Ozon: юнит-калькулятор, квиз-диагностика, бот управления отзывами. Каждый продукт генерирует лиды для остальных.",
+    task: "Сделать цифровые продукты основным источником дохода бизнеса",
+    stack: ["Next.js", "TypeScript", "Supabase", "AI", "Python"],
   },
 ];
 
@@ -41,18 +46,18 @@ export default function CurrentProjects() {
         <p className="label mb-4">Проекты</p>
         <h2 className="heading-lg text-text-base mb-12">Что делаю</h2>
 
-        {/* Completed */}
-        <p className="label mb-5">Завершённые</p>
-        <div className="grid md:grid-cols-1 gap-6 mb-12">
+        {/* Completed / Launched */}
+        <p className="label mb-5">Запущено</p>
+        <div className="flex flex-col gap-6 mb-12">
           {completed.map((p) => (
             <div
               key={p.title}
               className="card p-6 md:p-8 flex flex-col gap-5 hover:border-white/[0.16] transition-colors duration-300"
             >
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 text-xs font-medium text-emerald-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                  Запущен
+                <span className={`inline-flex items-center gap-2 text-xs font-medium ${p.statusColor}`}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-slow" />
+                  {p.status}
                 </span>
                 <a
                   href={p.link}
@@ -87,7 +92,7 @@ export default function CurrentProjects() {
                 {p.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-xs rounded-full"
+                    className="px-3 py-1 bg-accent/10 border border-accent/20 text-accent-light text-xs rounded-full"
                   >
                     {tech}
                   </span>
@@ -99,15 +104,13 @@ export default function CurrentProjects() {
 
         {/* In progress */}
         <p className="label mb-5">В процессе</p>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-1 gap-6">
           {inProgress.map((p) => (
             <div
               key={p.title}
               className="card p-6 md:p-8 flex flex-col gap-5 hover:border-white/[0.16] transition-colors duration-300"
             >
-              <span
-                className={`inline-flex items-center gap-2 text-xs font-medium ${p.statusClass}`}
-              >
+              <span className={`inline-flex items-center gap-2 text-xs font-medium ${p.statusClass}`}>
                 <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-slow" />
                 {p.status}
               </span>
@@ -120,7 +123,7 @@ export default function CurrentProjects() {
               </div>
 
               <div className="p-4 bg-white/[0.03] rounded-xl border border-white/[0.06]">
-                <p className="label mb-1">Задача</p>
+                <p className="label mb-1">Цель</p>
                 <p className="text-text-base text-sm leading-snug">{p.task}</p>
               </div>
 
