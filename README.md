@@ -1,61 +1,45 @@
-# Yuraz Lab — Portfolio Landing
+# Привет, я Юрий 👋
 
-Personal portfolio site for Yuriy Zuev (Yuraz Lab).
+Строю нейропродукты для бизнеса — сайты, AI-агенты и автоматизации.  
+Маркетплейс-эксперт, который однажды устал от ручной рутины и начал всё автоматизировать.
 
-**Live:** https://yurazlab.ru  
-**Vercel:** https://yurazlab.vercel.app
+---
 
-## Stack
+## 🔥 Что строю сейчас
 
-- Next.js 16 + TypeScript
-- Tailwind CSS
-- lucide-react
-- Vercel (hosting + auto-deploy)
+| Проект | Описание | Статус |
+|---|---|---|
+| [НейроЭлектрик](https://t.me/neuro_electric_bot) | Первый в России AI-бот для электриков — текст, фото, голос | 🟡 Тестирование |
+| Экосистема SellersHelp | SaaS-инструменты для продавцов WB и Ozon | 🔵 В разработке |
 
-## Local development
+---
 
-```bash
-npm install
-npm run dev
-# → http://localhost:3000
-```
+## 🚀 Запущено
 
-## Deploy
+- 🌐 **[yurazlab.ru](https://yurazlab.ru)** — портфолио и услуги
+- 🏢 **[sellershelp.ru](https://sellershelp.ru)** — сайт агентства по маркетплейсам
+- 🤖 **[@neuro_electric_bot](https://t.me/neuro_electric_bot)** — AI-ассистент для электриков
 
-Auto-deploy on every `git push` to `main` via Vercel + GitHub.
+---
 
-Manual deploy:
-```bash
-vercel --prod
-```
+## 🛠 Стек
 
-## Structure
+![Next.js](https://img.shields.io/badge/Next.js-000?style=flat&logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![Claude API](https://img.shields.io/badge/Claude_API-D97757?style=flat)
+![Telegram](https://img.shields.io/badge/Telegram_Bot-2CA5E0?style=flat&logo=telegram&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000?style=flat&logo=vercel)
 
-```
-app/
-  layout.tsx        # fonts, metadata, SEO
-  page.tsx          # page assembly
-  globals.css       # utilities: .card, .btn-primary, .section
-components/
-  Navbar.tsx        # sticky nav, mobile menu
-  Hero.tsx          # headline, CTA, stat badges
-  CurrentProjects.tsx  # "what I'm building now"
-  Services.tsx      # 4 service cards
-  HowIWork.tsx      # 5-step process
-  About.tsx         # story, stack, bento facts, photo
-  Contact.tsx       # Telegram + email
-  Footer.tsx
-public/
-  photo.jpg         # portrait photo
-```
+---
 
-## Contacts on site
+## 📬 Контакт
 
-- Telegram: @yurazlab
-- Email: yurazlab@gmail.com
+- 💬 Telegram: [@yurazlab](https://t.me/yurazlab)
+- 📧 Email: yurazlab@gmail.com
+- 🌐 Сайт: [yurazlab.ru](https://yurazlab.ru)
 
-## DNS
+---
 
-Domain `yurazlab.ru` registered on reg.ru.  
-A record: `@ → 76.76.21.21` (Vercel)  
-A record: `www → 76.76.21.21` (Vercel)
+> *Строю публично — каждый проект это опыт, каждая ошибка — урок.*
