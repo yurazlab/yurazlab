@@ -10,7 +10,9 @@
 | Проект | Описание | Статус |
 |---|---|---|
 | [НейроЭлектрик](https://t.me/neuro_electric_bot) | Первый в России AI-бот для электриков — текст, фото, голос | 🟡 Тестирование |
-| Экосистема SellersHelp | SaaS-инструменты для продавцов WB и Ozon | 🔵 В разработке |
+| [Транскрибатор SellersHelp AI](https://t.me/sh_voice_bot) | Telegram-бот: аудио/видео → транскрипция + конспект. Яндекс Диск, RuTube, YouTube | 🟢 Запущен |
+| [VoiceTask Bot](https://t.me/voicetask_bot) | Голосовой планировщик задач с AI-разбором и напоминаниями | 🟢 Запущен |
+| Экосистема SellersHelp AI | SaaS-инструменты для продавцов WB и Ozon | 🔵 В разработке |
 
 ---
 
@@ -19,6 +21,8 @@
 - 🌐 **[yurazlab.ru](https://yurazlab.ru)** — портфолио и услуги
 - 🏢 **[sellershelp.ru](https://sellershelp.ru)** — сайт агентства по маркетплейсам
 - 🤖 **[@neuro_electric_bot](https://t.me/neuro_electric_bot)** — AI-ассистент для электриков
+- 🎙 **[@sh_voice_bot](https://t.me/sh_voice_bot)** — транскрибатор аудио и видео с конспектом
+- 📋 **[@voicetask_bot](https://t.me/voicetask_bot)** — голосовой планировщик задач
 
 ---
 
