@@ -30,6 +30,19 @@ const completed = [
   {
     status: "Запущен",
     statusColor: "text-emerald-400",
+    title: "Транскрибатор SellersHelp AI — Telegram-бот",
+    description:
+      "Telegram-бот для транскрибации аудио и видео с генерацией структурированного конспекта. Бесплатный инструмент для команды и клиентов SellersHelp. Поддерживает Яндекс Диск, RuTube, YouTube, голосовые сообщения. Протестирован на 2-часовых записях встреч.",
+    task: "Дать команде инструмент для быстрого разбора встреч, звонков и обучающих видео без ручной транскрибации",
+    result: "Бот развёрнут, обрабатывает длинные видео (~9 мин на 2 часа), одноразовые инвайты для новых пользователей",
+    stack: ["Python", "Whisper API", "GPT-4o-mini", "yt-dlp", "ffmpeg", "Telegram Bot", "Vultr VPS"],
+    link: "https://t.me/sh_voice_bot",
+    linkLabel: "@sh_voice_bot",
+    hasScreenshots: false,
+  },
+  {
+    status: "Запущен",
+    statusColor: "text-emerald-400",
     title: "Сайт агентства SellersHelp",
     description:
       "Корпоративный сайт для агентства по продвижению на маркетплейсах Wildberries и Ozon. Полный цикл: дизайн, разработка, деплой.",
