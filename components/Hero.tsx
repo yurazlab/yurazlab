@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 
 const stats = [
-  { value: "2", label: "Продукта", desc: "запущены" },
+  { value: "3", label: "Продукта", desc: "запущены" },
   { value: "4", label: "GPT-агента", desc: "в работе" },
   { value: "→", label: "Экосистема", desc: "в разработке" },
 ];
