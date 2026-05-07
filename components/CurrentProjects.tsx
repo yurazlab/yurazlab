@@ -54,6 +54,19 @@ const completed = [
     hasScreenshots: false,
   },
   {
+    status: "Тестирование",
+    statusColor: "text-cyan",
+    title: "Бот управления отзывами WB — AI-ответы",
+    description:
+      "Telegram-бот для управления отзывами на Wildberries с AI-генерацией ответов через Claude. Мультимагазинный режим — несколько кабинетов в одном боте. Генерирует ответ с учётом контекста товара и персональной подписи магазина. Поддержка Ozon в разработке.",
+    task: "Убрать рутину ежедневных ответов на отзывы без потери качества и персонального стиля магазина",
+    result: "WB мультимагазинный режим работает (2 кабинета), product-aware AI с персональными подписями, очередь при rate limit",
+    stack: ["Python", "Claude Haiku", "WB API", "aiogram", "Supabase", "Vultr VPS"],
+    link: "",
+    linkLabel: "",
+    hasScreenshots: false,
+  },
+  {
     status: "Запущен",
     statusColor: "text-emerald-400",
     title: "Сайт агентства SellersHelp",
@@ -69,6 +82,15 @@ const completed = [
 ];
 
 const inProgress = [
+  {
+    status: "В разработке",
+    statusClass: "text-accent-light",
+    title: "Генератор договоров — MAX-бот для SellersHelp",
+    description:
+      "Внутренний бот в мессенджере MAX для автоматической генерации договоров на оказание услуг. Менеджер вводит ИНН клиента — бот сам запрашивает реквизиты через DaData, уточняет тариф и условия, формирует готовый DOCX за 1 минуту вместо 10+.",
+    task: "Автоматизировать рутинное оформление договоров — убрать ручное заполнение шаблонов при каждом новом клиенте",
+    stack: ["Python", "MAX Bot API", "DaData API", "python-docx"],
+  },
   {
     status: "В разработке",
     statusClass: "text-accent-light",
@@ -210,15 +232,17 @@ export default function CurrentProjects() {
                   <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-slow" />
                   {p.status}
                 </span>
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-accent-light transition-colors"
-                >
-                  {p.linkLabel}
-                  <ExternalLink size={12} />
-                </a>
+                {p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-accent-light transition-colors"
+                  >
+                    {p.linkLabel}
+                    <ExternalLink size={12} />
+                  </a>
+                )}
               </div>
 
               <div>
