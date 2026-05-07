@@ -41,16 +41,16 @@ const completed = [
     hasScreenshots: false,
   },
   {
-    status: "Запущен",
-    statusColor: "text-emerald-400",
+    status: "Переработка",
+    statusColor: "text-zinc-400",
     title: "VoiceTask — голосовой планировщик задач",
     description:
-      "Telegram-бот для управления задачами с голосовым вводом и AI-парсингом. Надиктуй задачу на русском — бот сам разберёт дедлайн и приоритет, сохранит и напомнит в нужное время. Поддерживает повторяющиеся задачи и контекстные команды.",
+      "Личный инструмент для управления задачами с голосовым вводом и AI-парсингом. Надиктуй задачу на русском — бот сам разберёт дедлайн и приоритет, сохранит и напомнит. MVP на Telegram готов, сейчас переносится на MAX.",
     task: "Создать инструмент, где достаточно надиктовать «позвонить Ивану завтра в 15:30» — всё остальное делает AI",
-    result: "Бот работает 24/7, принимает голос и текст, напоминания и контекст переживают перезапуск",
-    stack: ["Python", "Whisper API", "Claude Haiku", "APScheduler", "SQLite", "Vultr VPS"],
-    link: "https://t.me/voicetask_bot",
-    linkLabel: "@voicetask_bot",
+    result: "MVP + Фаза 2 завершены: голос, повторяющиеся задачи, контекстные команды, напоминания 24/7",
+    stack: ["Python", "Whisper API", "Claude Haiku", "APScheduler", "SQLite", "MAX Bot API"],
+    link: "",
+    linkLabel: "",
     hasScreenshots: false,
   },
   {
