@@ -30,7 +30,7 @@ const completed = [
   {
     status: "Запущен",
     statusColor: "text-emerald-400",
-    title: "SH Voice Client — клиентский Telegram-бот SellersHelp",
+    title: "Транскрибатор SellersHelp — клиентский Telegram-бот",
     description:
       "Telegram-бот для транскрибации аудио и видео с таймкодами и структурированным конспектом. Начинался как внутренний инструмент команды — вырос в отдельный клиентский продукт. Поддерживает YouTube, youtube.ru, VK Видео, Дзен, RuTube, Instagram, TikTok, Яндекс Диск и файлы до 2 ГБ.",
     task: "Дать клиентам и подписчикам SellersHelp инструмент для быстрого разбора встреч, звонков и обучающих видео",
