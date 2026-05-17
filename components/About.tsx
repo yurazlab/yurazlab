@@ -35,7 +35,8 @@ export default function About() {
                 src="/photo.jpg"
                 alt="Юрий — основатель Yuraz Lab"
                 fill
-                className="object-cover object-[center_10%]"
+                sizes="144px"
+                className="object-cover object-center"
                 priority
               />
             </div>
