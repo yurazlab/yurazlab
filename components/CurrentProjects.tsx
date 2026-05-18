@@ -103,6 +103,8 @@ const inProgress = [
       "Комплекс SaaS-инструментов для продавцов WB и Ozon: юнит-калькулятор, квиз-диагностика, бот управления отзывами. Каждый продукт генерирует лиды для остальных.",
     task: "Сделать цифровые продукты основным источником дохода бизнеса",
     stack: ["Next.js", "TypeScript", "Supabase", "AI", "Python"],
+    link: "https://sellershelpai.ru",
+    linkLabel: "sellershelpai.ru",
   },
 ];
 
@@ -289,10 +291,23 @@ export default function CurrentProjects() {
               key={p.title}
               className="card p-6 md:p-8 flex flex-col gap-5 hover:border-white/[0.16] transition-colors duration-300"
             >
-              <span className={`inline-flex items-center gap-2 text-xs font-medium ${p.statusClass}`}>
-                <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-slow" />
-                {p.status}
-              </span>
+              <div className="flex items-center justify-between">
+                <span className={`inline-flex items-center gap-2 text-xs font-medium ${p.statusClass}`}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-slow" />
+                  {p.status}
+                </span>
+                {p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-accent-light transition-colors"
+                  >
+                    {p.linkLabel}
+                    <ExternalLink size={12} />
+                  </a>
+                )}
+              </div>
 
               <div>
                 <h3 className="heading-md text-text-base mb-2">{p.title}</h3>
