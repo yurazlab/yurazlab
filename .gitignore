@@ -8,5 +8,3 @@ build/
 .DS_Store
 npm-debug.log*
 
-# Claude Code instructions (local only - not for public portfolio)
-CLAUDE.md
