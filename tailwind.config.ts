@@ -18,7 +18,7 @@ const config: Config = {
         "accent-light": "#818CF8",
         cyan: "#22D3EE",
         "text-base": "#EDEDF7",
-        "text-muted": "#6B6B8A",
+        "text-muted": "#9B9BBA",
       },
       backgroundImage: {
         "hero-glow":
