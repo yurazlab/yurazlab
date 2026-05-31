@@ -10,6 +10,7 @@ const config: Config = {
       fontFamily: {
         onest: ["var(--font-onest)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
       },
       colors: {
         dark: "#09090F",

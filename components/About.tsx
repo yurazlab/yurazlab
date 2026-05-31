@@ -105,7 +105,7 @@ export default function About() {
                 {stack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1.5 bg-white/[0.04] border border-white/[0.08] rounded-lg text-text-muted text-sm hover:border-accent/30 hover:text-text-base transition-all duration-200 cursor-default"
+                    className="tag-mono hover:border-accent/30 hover:text-text-base transition-all duration-200 cursor-default"
                   >
                     {tech}
                   </span>

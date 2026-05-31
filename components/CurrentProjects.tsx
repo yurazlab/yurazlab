@@ -273,7 +273,7 @@ export default function CurrentProjects() {
                 {p.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-accent/10 border border-accent/20 text-accent-light text-xs rounded-full"
+                    className="font-mono text-xs tracking-tight bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-md text-accent-light"
                   >
                     {tech}
                   </span>
@@ -323,7 +323,7 @@ export default function CurrentProjects() {
                 {p.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-accent/10 border border-accent/20 text-accent-light text-xs rounded-full"
+                    className="font-mono text-xs tracking-tight bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-md text-accent-light"
                   >
                     {tech}
                   </span>

@@ -19,6 +19,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
   text-wrap: pretty;
+  position: relative;
+}
+
+/* Subtle film grain overlay — adds tactile texture to flat dark surfaces */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
 }
 
 ::selection {
@@ -44,8 +58,34 @@ body {
 }
 
 @layer utilities {
+  /* Card with subtle gradient border — lighter top edge ("lit from above") */
   .card {
-    @apply bg-white/[0.04] border border-white/[0.08] rounded-2xl;
+    @apply relative bg-white/[0.04] border border-white/[0.08] rounded-2xl;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(99, 102, 241, 0.05) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Monospace tag for tech stack — JetBrains Mono feel */
+  .tag-mono {
+    @apply font-mono text-xs tracking-tight bg-white/[0.04] border border-white/[0.08]
+           px-2.5 py-1 rounded-md text-text-muted;
   }
 
   .section {

@@ -9,8 +9,32 @@ const trustMarkers = [
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      {/* Multi-layer ambient glow — primary indigo top-left, cyan accent
+          bottom-right, soft fill mid-left. Asymmetric for visual depth. */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute -top-[15%] left-[10%] w-[70%] h-[60%]"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 100% at 50% 30%, rgba(99,102,241,0.20), transparent 65%)",
+          }}
+        />
+        <div
+          className="absolute bottom-[-20%] right-[-5%] w-[55%] h-[70%]"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 100% at 50% 30%, rgba(34,211,238,0.10), transparent 65%)",
+          }}
+        />
+        <div
+          className="absolute top-[40%] left-[-15%] w-[40%] h-[40%]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(124,58,237,0.08), transparent 70%)",
+          }}
+        />
+      </div>
 
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.025]"
@@ -18,13 +42,6 @@ export default function Hero() {
           backgroundImage:
             "radial-gradient(rgba(255,255,255,1) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
-        }}
-      />
-
-      <div
-        className="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none opacity-[0.04]"
-        style={{
-          background: "radial-gradient(circle, #22D3EE 0%, transparent 70%)",
         }}
       />
 
