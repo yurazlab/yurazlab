@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Onest, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const inter = Inter({
@@ -77,6 +78,7 @@ export default function RootLayout({
       className={`${inter.variable} ${onest.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-inter bg-dark text-text-base antialiased">
+        <JsonLd />
         {children}
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`

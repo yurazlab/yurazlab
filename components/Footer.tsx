@@ -24,6 +24,14 @@ export default function Footer() {
             >
               Email
             </a>
+            <a
+              href="https://github.com/yurazlab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-muted hover:text-text-base text-sm transition-colors"
+            >
+              GitHub
+            </a>
           </div>
         </div>
         <p className="text-text-muted text-xs text-center border-t border-white/[0.05] pt-5">
