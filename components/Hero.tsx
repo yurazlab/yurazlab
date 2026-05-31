@@ -1,14 +1,15 @@
 import { ArrowRight } from "lucide-react";
 
-const stats = [
-  { value: "4", label: "Продукта", desc: "запущены" },
-  { value: "4", label: "GPT-агента", desc: "в работе" },
-  { value: "→", label: "Экосистема", desc: "в разработке" },
+const trustMarkers = [
+  { value: "25+", label: "лет в продажах" },
+  { value: "600+", label: "клиентов SellersHelp" },
+  { value: "2019", label: "на маркетплейсах с" },
+  { value: "5+", label: "AI-продуктов" },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
 
       <div
@@ -27,55 +28,69 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-base relative z-10 py-20 md:py-28">
-        <div className="inline-flex items-center gap-2.5 bg-white/[0.06] border border-white/[0.1] rounded-full px-4 py-1.5 text-sm text-text-muted mb-10">
+      <div className="container-base relative z-10">
+        <div className="inline-flex items-center gap-2.5 bg-white/[0.06] border border-white/[0.1] rounded-full px-4 py-1.5 text-sm text-text-muted mb-8">
           <span className="w-2 h-2 rounded-full bg-cyan animate-pulse-slow flex-shrink-0" />
           Открыт для новых проектов
         </div>
 
         <h1 className="heading-xl text-text-base mb-6 max-w-4xl">
-          Создаю{" "}
-          <span className="text-accent">нейропродукты</span>{" "}
+          Создаю <span className="text-accent">AI-продукты</span>
           <br className="hidden md:block" />
           для бизнеса
         </h1>
 
-        <p className="text-text-muted text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
-          Разрабатываю сайты, приложения и AI-агентов, которые
-          автоматизируют рутину и освобождают время для роста.
-          Строю публично — шаг за шагом.
+        <p className="text-cyan text-lg md:text-2xl font-medium mb-6 max-w-3xl">
+          25+ лет в продажах{" "}
+          <span className="text-text-muted">→</span>{" "}
+          теперь строю AI-продукты
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <a href="#contact" className="btn-primary">
-            Обсудить проект <ArrowRight size={16} />
-          </a>
+        <p className="text-text-muted text-lg max-w-3xl leading-relaxed mb-10">
+          Telegram-боты, AI-агенты и автоматизации под ключ. Сооснователь{" "}
+          <span className="text-text-base font-medium">SellersHelp</span>{" "}
+          (600+ клиентов на маркетплейсах) и SellersHelp AI. От 35 000 ₽,
+          запуск за 1–4 недели.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 mb-12">
           <a
             href="https://t.me/yurazlab"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-ghost"
+            className="btn-primary"
           >
-            @yurazlab в Telegram
+            Описать задачу <ArrowRight size={16} />
+          </a>
+          <a href="#projects" className="btn-ghost">
+            Посмотреть кейсы
           </a>
         </div>
 
-        <div className="flex flex-wrap gap-3">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="card px-5 py-3.5 flex items-center gap-3 hover:border-white/[0.16] transition-colors duration-200"
-            >
-              <span className="font-onest font-bold text-xl text-text-base leading-none">
-                {s.value}
-              </span>
-              <div>
-                <p className="text-text-base text-sm font-medium leading-tight">
-                  {s.label}
-                </p>
-                <p className="text-text-muted text-xs leading-tight">{s.desc}</p>
-              </div>
-            </div>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-text-muted">
+          {trustMarkers.map((m, i) => (
+            <span key={m.label} className="inline-flex items-center gap-x-5">
+              {i === 2 ? (
+                <span>
+                  {m.label}{" "}
+                  <span className="text-text-base font-semibold font-onest">
+                    {m.value}
+                  </span>
+                </span>
+              ) : (
+                <span>
+                  <span className="text-text-base font-semibold font-onest">
+                    {m.value}
+                  </span>{" "}
+                  {m.label}
+                </span>
+              )}
+              {i < trustMarkers.length - 1 && (
+                <span className="text-white/20" aria-hidden>
+                  ·
+                </span>
+              )}
+            </span>
           ))}
         </div>
       </div>

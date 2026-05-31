@@ -1,4 +1,4 @@
-import { Bot, Zap, Globe, Smartphone } from "lucide-react";
+import { Bot, Zap, Globe, Webhook } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface Service {
@@ -43,11 +43,11 @@ const services: Service[] = [
     iconBorder: "border-emerald-400/25",
   },
   {
-    icon: Smartphone,
-    title: "Мобильные приложения",
+    icon: Webhook,
+    title: "Интеграции и API",
     description:
-      "MVP мобильных приложений для стартапов: от wireframe до публикации в App Store и Google Play.",
-    result: "В планах — добавлю опыт к концу 2026",
+      "amoCRM, Bitrix24, WB API, Ozon API, DaData, Telegram Bot API, MAX, n8n. Подключаю то, что у вас уже есть — без переписывания систем.",
+    result: "Готовая связка за 1–2 недели",
     iconClass: "text-orange-400",
     iconBg: "bg-orange-400/10",
     iconBorder: "border-orange-400/25",

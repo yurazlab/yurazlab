@@ -17,6 +17,8 @@ body {
   color: #ededf7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -47,7 +49,7 @@ body {
   }
 
   .section {
-    @apply py-20 md:py-32;
+    @apply py-14 md:py-20;
   }
 
   .container-base {
@@ -59,15 +61,15 @@ body {
   }
 
   .heading-xl {
-    @apply font-onest text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight;
+    @apply font-onest text-5xl lg:text-8xl font-bold leading-[1.02] tracking-[-0.03em] text-balance;
   }
 
   .heading-lg {
-    @apply font-onest text-3xl md:text-5xl font-bold leading-tight tracking-tight;
+    @apply font-onest text-3xl lg:text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-balance;
   }
 
   .heading-md {
-    @apply font-onest text-lg md:text-xl font-semibold;
+    @apply font-onest text-xl lg:text-2xl font-semibold leading-snug tracking-[-0.01em];
   }
 
   .btn-primary {

@@ -189,10 +189,12 @@ export default function Pricing() {
             </p>
           </div>
           <a
-            href="#contact"
+            href="https://t.me/yurazlab"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary flex-shrink-0 text-sm"
           >
-            Обсудить проект <ArrowRight size={15} />
+            Описать задачу <ArrowRight size={15} />
           </a>
         </div>
       </div>
