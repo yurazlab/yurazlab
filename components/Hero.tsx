@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 const trustMarkers = [
   { value: "25+", label: "лет в продажах" },
   { value: "600+", label: "клиентов SellersHelp" },
-  { value: "2019", label: "на маркетплейсах с" },
+  { value: "6+", label: "лет на маркетплейсах" },
   { value: "5+", label: "AI-продуктов" },
 ];
 
@@ -35,7 +35,8 @@ export default function Hero() {
         </div>
 
         <h1 className="heading-xl text-text-base mb-6 max-w-4xl">
-          Создаю <span className="text-accent">AI-продукты</span>
+          Создаю{" "}
+          <span className="text-accent whitespace-nowrap">AI&#8209;продукты</span>{" "}
           <br className="hidden md:block" />
           для бизнеса
         </h1>
@@ -43,7 +44,8 @@ export default function Hero() {
         <p className="text-cyan text-lg md:text-2xl font-medium mb-6 max-w-3xl">
           25+ лет в продажах{" "}
           <span className="text-text-muted">→</span>{" "}
-          теперь строю AI-продукты
+          теперь строю{" "}
+          <span className="whitespace-nowrap">AI&#8209;продукты</span>
         </p>
 
         <p className="text-text-muted text-lg max-w-3xl leading-relaxed mb-10">
@@ -70,21 +72,12 @@ export default function Hero() {
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-text-muted">
           {trustMarkers.map((m, i) => (
             <span key={m.label} className="inline-flex items-center gap-x-5">
-              {i === 2 ? (
-                <span>
-                  {m.label}{" "}
-                  <span className="text-text-base font-semibold font-onest">
-                    {m.value}
-                  </span>
-                </span>
-              ) : (
-                <span>
-                  <span className="text-text-base font-semibold font-onest">
-                    {m.value}
-                  </span>{" "}
-                  {m.label}
-                </span>
-              )}
+              <span className="whitespace-nowrap">
+                <span className="text-text-base font-semibold font-onest">
+                  {m.value}
+                </span>{" "}
+                {m.label}
+              </span>
               {i < trustMarkers.length - 1 && (
                 <span className="text-white/20" aria-hidden>
                   ·

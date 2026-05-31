@@ -6,15 +6,18 @@ const stack = [
   "TypeScript",
   "Python",
   "Telegram Bot API",
+  "Claude API",
   "OpenAI API",
+  "Whisper",
   "Tailwind CSS",
   "Make / n8n",
+  "Supabase",
   "Vercel",
 ];
 
 const facts = [
-  { label: "Специализация", value: "Маркетплейсы + AI" },
-  { label: "AI-проекты", value: "В работе" },
+  { label: "Опыт в продажах", value: "25+ лет" },
+  { label: "В e-commerce с", value: "2019" },
   { label: "Подход", value: "Build in public" },
   { label: "Статус", value: "Открыт" },
 ];
@@ -44,22 +47,34 @@ export default function About() {
           </div>
 
           <h2 className="heading-lg text-text-base mb-6">
-              Маркетплейсы → автоматизация → нейропродукты
+              Юрий Зуев — основатель{" "}
+              <span className="text-accent whitespace-nowrap">Yuraz&nbsp;Lab</span>
             </h2>
 
             <div className="flex flex-col gap-4 text-text-muted leading-relaxed text-[15px]">
               <p>
-                Начинал с маркетплейсов — запускал продажи, строил операционку,
-                разбирался в аналитике. В какой-то момент устал от ручной рутины
-                и начал автоматизировать всё, что можно.
+                25+ лет в продажах и маркетинге — онлайн и оффлайн, в товарах
+                и услугах, в разных индустриях.
               </p>
               <p>
-                Это затянуло. Теперь изучаю разработку и строю инструменты,
-                которые помогают бизнесу работать умнее — не больше, а эффективнее.
+                С 2019 года в e-commerce на российских маркетплейсах
+                (Wildberries, Ozon, Яндекс Маркет, СберМегаМаркет, AliExpress).
+                В том же году вместе с партнёром основал{" "}
+                <span className="text-text-base">SellersHelp</span> — агентство
+                по продвижению на маркетплейсах, выросло до 600+ клиентов.
               </p>
               <p>
-                Работаю публично: каждый проект — опыт, каждая ошибка — урок.
-                Присоединяйтесь к journey.
+                В 2025 запустил{" "}
+                <span className="text-text-base">Yuraz Lab</span> —
+                микро-агентство AI-разработки под ключ для бизнеса любой сферы.
+                Параллельно развиваю{" "}
+                <span className="text-text-base">SellersHelp AI</span> —
+                цифровую экосистему для продавцов маркетплейсов.
+              </p>
+              <p>
+                Я не классический разработчик — я предприниматель, который
+                научился строить AI-продукты. Бизнес-задачу понимаю как практик,
+                а не как теоретик. Работаю публично — каждый проект открытый.
               </p>
             </div>
 
@@ -77,14 +92,6 @@ export default function About() {
                 className="btn-ghost text-sm"
               >
                 Email
-              </a>
-              <a
-                href="https://github.com/yurazlab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost text-sm"
-              >
-                GitHub
               </a>
             </div>
           </div>
