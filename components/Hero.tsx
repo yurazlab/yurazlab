@@ -1,10 +1,11 @@
 import { ArrowRight } from "lucide-react";
+import { totalProductCount } from "@/data/projects";
 
 const trustMarkers = [
   { value: "25+", label: "лет в продажах" },
   { value: "600+", label: "клиентов SellersHelp" },
   { value: "6+", label: "лет на маркетплейсах" },
-  { value: "5+", label: "AI-продуктов" },
+  { value: `${totalProductCount}+`, label: "AI-продуктов" },
 ];
 
 export default function Hero() {
