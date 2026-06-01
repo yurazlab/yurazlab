@@ -151,19 +151,6 @@ export default function JsonLd() {
             position: 1,
             item: {
               "@type": "SoftwareApplication",
-              name: "НейроЭлектрик",
-              description:
-                "Первый в России AI-ассистент для частных электриков в Telegram. Принимает текст, фото щитка и голосовые — отвечает планом работ, материалами с ценами и ссылками на ПУЭ 7. Работает 24/7.",
-              url: "https://t.me/neuro_electric_bot",
-              applicationCategory: "BusinessApplication",
-              operatingSystem: "Telegram",
-            },
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            item: {
-              "@type": "SoftwareApplication",
               name: "Транскрибатор SellersHelp",
               description:
                 "Telegram-бот транскрибации аудио и видео с таймкодами и структурированным конспектом. Поддерживает YouTube, VK Видео, Дзен, RuTube, Яндекс Диск, файлы до 2 ГБ.",
@@ -174,7 +161,7 @@ export default function JsonLd() {
           },
           {
             "@type": "ListItem",
-            position: 3,
+            position: 2,
             item: {
               "@type": "SoftwareApplication",
               name: "Бот управления репутацией",
@@ -187,7 +174,7 @@ export default function JsonLd() {
           },
           {
             "@type": "ListItem",
-            position: 4,
+            position: 3,
             item: {
               "@type": "SoftwareApplication",
               name: "Генератор договоров SellersHelp",
@@ -199,7 +186,7 @@ export default function JsonLd() {
           },
           {
             "@type": "ListItem",
-            position: 5,
+            position: 4,
             item: {
               "@type": "WebSite",
               name: "Сайт SellersHelp",
@@ -210,7 +197,7 @@ export default function JsonLd() {
           },
           {
             "@type": "ListItem",
-            position: 6,
+            position: 5,
             item: {
               "@type": "WebSite",
               name: "SellersHelp AI",

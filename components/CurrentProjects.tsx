@@ -1,32 +1,8 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-
-const neuroScreenshots = [
-  { src: "/cases/neuro-electric/ne-05-photo-panel.jpg", caption: "Анализ фото щитка" },
-  { src: "/cases/neuro-electric/ne-06-voice.jpg", caption: "Голосовой запрос" },
-  { src: "/cases/neuro-electric/ne-01-wiring-advice.jpg", caption: "Совет по разводке" },
-  { src: "/cases/neuro-electric/ne-04-cable-calc.jpg", caption: "Расчёт кабеля" },
-  { src: "/cases/neuro-electric/ne-03-panel-72.jpg", caption: "Выбор размера щита" },
-  { src: "/cases/neuro-electric/ne-02-rewiring-total.jpg", caption: "Смета замены проводки" },
-];
 
 const completed = [
-  {
-    status: "Тестирование",
-    statusColor: "text-cyan",
-    title: "НейроЭлектрик — AI-бот для электриков",
-    description:
-      "Первый в России AI-ассистент для частных электриков. Принимает текст, фото щитка и голосовые — отвечает как опытный коллега: план работ, материалы с ценами в ₽, ссылки на ПУЭ 7. Работает в Telegram 24/7.",
-    task: "Дать электрику ответ на объекте за 5–10 секунд — без поиска, без звонков",
-    result: "MVP запущен, идёт живое тестирование с реальным электриком",
-    stack: ["Python", "Claude API", "Whisper API", "Telegram Bot", "EU VPS"],
-    link: "https://t.me/neuro_electric_bot",
-    linkLabel: "@neuro_electric_bot",
-    hasScreenshots: true,
-  },
   {
     status: "Запущен",
     statusColor: "text-emerald-400",
@@ -38,20 +14,6 @@ const completed = [
     stack: ["Python", "Whisper API", "GPT-4o-mini", "Claude Haiku", "yt-dlp", "ffmpeg", "SQLite", "Vultr VPS"],
     link: "https://t.me/sellershelp_voice_bot",
     linkLabel: "@sellershelp_voice_bot",
-    hasScreenshots: false,
-  },
-  {
-    status: "Переработка",
-    statusColor: "text-zinc-400",
-    title: "VoiceTask — голосовой планировщик задач",
-    description:
-      "Личный инструмент для управления задачами с голосовым вводом и AI-парсингом. Надиктуй задачу на русском — бот сам разберёт дедлайн и приоритет, сохранит и напомнит. MVP на Telegram готов, сейчас переносится на MAX.",
-    task: "Создать инструмент, где достаточно надиктовать «позвонить Ивану завтра в 15:30» — всё остальное делает AI",
-    result: "MVP + Фаза 2 завершены: голос, повторяющиеся задачи, контекстные команды, напоминания 24/7",
-    stack: ["Python", "Whisper API", "Claude Haiku", "APScheduler", "SQLite", "MAX Bot API"],
-    link: "",
-    linkLabel: "",
-    hasScreenshots: false,
   },
   {
     status: "Тестирование",
@@ -64,7 +26,6 @@ const completed = [
     stack: ["Python", "Claude API", "aiogram", "WB API", "Ozon API", "Supabase", "Vultr VPS"],
     link: "https://t.me/sellershelp_reviews_bot",
     linkLabel: "@sellershelp_reviews_bot",
-    hasScreenshots: false,
   },
   {
     status: "Запущен",
@@ -77,7 +38,6 @@ const completed = [
     stack: ["Python", "MAX Bot API", "DaData API", "python-docx", "aiogram FSM"],
     link: "",
     linkLabel: "",
-    hasScreenshots: false,
   },
   {
     status: "Запущен",
@@ -90,7 +50,6 @@ const completed = [
     stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Timeweb"],
     link: "https://sellershelp.ru",
     linkLabel: "sellershelp.ru",
-    hasScreenshots: false,
   },
 ];
 
@@ -107,116 +66,6 @@ const inProgress = [
     linkLabel: "sellershelpai.ru",
   },
 ];
-
-function ScreenshotsGallery() {
-  const [idx, setIdx] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (idx === null) return;
-
-    document.body.style.overflow = "hidden";
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIdx(null);
-      if (e.key === "ArrowRight") setIdx((i) => (i !== null && i < neuroScreenshots.length - 1 ? i + 1 : i));
-      if (e.key === "ArrowLeft") setIdx((i) => (i !== null && i > 0 ? i - 1 : i));
-    };
-    window.addEventListener("keydown", onKey);
-
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [idx]);
-
-  const current = idx !== null ? neuroScreenshots[idx] : null;
-
-  return (
-    <>
-      <div>
-        <p className="label mb-3">Примеры диалогов с ботом</p>
-        <div className="flex gap-3 overflow-x-auto pb-2">
-          {neuroScreenshots.map((s, i) => (
-            <button
-              key={s.src}
-              onClick={() => setIdx(i)}
-              className="flex-shrink-0 group text-left"
-            >
-              <div
-                className="relative rounded-xl overflow-hidden border border-white/[0.08] group-hover:border-accent/40 transition-colors duration-200"
-                style={{ width: "80px", height: "176px" }}
-              >
-                <Image src={s.src} alt={s.caption} fill className="object-cover object-top" sizes="80px" />
-              </div>
-              <p className="text-text-muted text-[10px] mt-1.5 text-center leading-tight" style={{ width: "80px" }}>
-                {s.caption}
-              </p>
-            </button>
-          ))}
-        </div>
-        <p className="text-text-muted text-xs mt-2">Нажми на скрин — откроется полностью · ← → для навигации · Esc для закрытия</p>
-      </div>
-
-      {/* Lightbox */}
-      {current && idx !== null && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm"
-          onClick={() => setIdx(null)}
-        >
-          {/* Image container */}
-          <div
-            className="relative flex items-center justify-center"
-            style={{ maxHeight: "90vh", maxWidth: "min(420px, 90vw)" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={current.src}
-              alt={current.caption}
-              width={420}
-              height={924}
-              className="rounded-2xl object-contain"
-              style={{ maxHeight: "90vh", width: "auto", height: "auto" }}
-              priority
-            />
-
-            {/* Caption */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-dark/80 rounded-full text-text-muted text-xs whitespace-nowrap">
-              {current.caption} · {idx + 1} / {neuroScreenshots.length}
-            </div>
-
-            {/* Close */}
-            <button
-              onClick={() => setIdx(null)}
-              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark/80 border border-white/[0.15] text-text-muted hover:text-text-base flex items-center justify-center text-sm transition-colors"
-            >
-              ✕
-            </button>
-          </div>
-
-          {/* Prev */}
-          {idx > 0 && (
-            <button
-              onClick={(e) => { e.stopPropagation(); setIdx(idx - 1); }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/80 border border-white/[0.15] text-text-base hover:border-accent/40 flex items-center justify-center transition-colors"
-            >
-              ←
-            </button>
-          )}
-
-          {/* Next */}
-          {idx < neuroScreenshots.length - 1 && (
-            <button
-              onClick={(e) => { e.stopPropagation(); setIdx(idx + 1); }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/80 border border-white/[0.15] text-text-base hover:border-accent/40 flex items-center justify-center transition-colors"
-            >
-              →
-            </button>
-          )}
-        </div>
-      )}
-    </>
-  );
-}
 
 export default function CurrentProjects() {
   return (
@@ -266,8 +115,6 @@ export default function CurrentProjects() {
                   <p className="text-text-base text-sm leading-snug">{p.result}</p>
                 </div>
               </div>
-
-              {p.hasScreenshots && <ScreenshotsGallery />}
 
               <div className="flex flex-wrap gap-2 mt-auto">
                 {p.stack.map((tech) => (
