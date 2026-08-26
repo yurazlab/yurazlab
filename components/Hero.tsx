@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 const trustMarkers = [
   "25+ лет в продажах и управлении",
   "С 2019 года на маркетплейсах",
-  "С апреля 2026 года создаю AI-продукты",
+  "Системно применяю AI с мая 2025 года",
 ];
 
 export default function Hero() {

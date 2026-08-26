@@ -22,7 +22,7 @@ export default function About() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 36vw"
                 className="object-cover"
-                priority={false}
+                preload
               />
             </div>
           </div>

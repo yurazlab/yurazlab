@@ -6,7 +6,6 @@ import BusinessOffer from "@/components/BusinessOffer";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import StickyTelegramPill from "@/components/StickyTelegramPill";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <StickyTelegramPill />
     </>
   );
 }

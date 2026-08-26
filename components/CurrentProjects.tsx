@@ -7,7 +7,7 @@ export default function CurrentProjects() {
       <div className="container-base">
         <p className="label mb-4">Кейсы</p>
         <div className="mb-12 grid gap-5 lg:grid-cols-[1fr_0.7fr] lg:items-end">
-          <h2 className="heading-lg text-text-base">Работающие AI-продукты</h2>
+          <h2 className="heading-lg text-text-base">Работающие AI-инструменты и автоматизации</h2>
           <p className="text-base leading-relaxed text-text-muted lg:justify-self-end">
             Кейсы ниже — решения для задач Sellers Help, где я сооснователь. В карточках указаны моя роль и фактический статус каждого продукта.
           </p>

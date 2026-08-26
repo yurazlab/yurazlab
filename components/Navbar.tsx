@@ -42,7 +42,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link href="#contact" className="btn-primary hidden px-5 py-2.5 text-sm md:inline-flex">
+        <Link href="#contact" className="btn-primary px-5 py-2.5 text-sm">
           Связаться
         </Link>
 
@@ -61,7 +61,12 @@ export default function Navbar() {
 
       <div
         id="mobile-menu"
-        className={`overflow-hidden border-t border-white/[0.06] bg-dark/95 backdrop-blur-xl transition-all duration-300 md:hidden ${open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}
+        aria-hidden={!open}
+        className={`overflow-hidden border-t border-white/[0.06] bg-dark/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
+          open
+            ? "visible max-h-80 opacity-100 pointer-events-auto"
+            : "invisible max-h-0 opacity-0 pointer-events-none"
+        }`}
       >
         <div className="container-base flex flex-col gap-4 py-5">
           {links.map((link) => (
@@ -74,9 +79,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="#contact" className="btn-primary mt-2 w-fit text-sm" onClick={() => setOpen(false)}>
-            Связаться
-          </Link>
         </div>
       </div>
     </nav>

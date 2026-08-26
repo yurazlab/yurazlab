@@ -53,7 +53,7 @@ export default function JsonLd() {
       {
         "@type": "ItemList",
         "@id": `${siteUrl}/#projects`,
-        name: "Работающие AI-продукты",
+        name: "Работающие AI-инструменты и автоматизации",
         itemListElement: featuredProjects.map((project, index) => ({
           "@type": "ListItem",
           position: index + 1,

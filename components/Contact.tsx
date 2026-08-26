@@ -8,7 +8,7 @@ export default function Contact() {
           <p className="label mb-4">Контакты</p>
           <h2 className="heading-lg mb-5 text-text-base">Обсудить сотрудничество</h2>
           <p className="mx-auto mb-9 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-            Если вы рассматриваете руководителя AI-проекта в команду или хотите обсудить
+            Если вам нужен руководитель AI-проектов в команду или вы хотите обсудить
             бизнес-задачу, напишите в Telegram или на почту.
           </p>
 
