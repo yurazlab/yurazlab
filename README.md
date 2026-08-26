@@ -1,49 +1,29 @@
-# Привет, я Юрий 👋
+# Юрий Зуев — руководитель AI-проектов
 
-Строю нейропродукты для бизнеса — сайты, AI-агенты и автоматизации.  
-Маркетплейс-эксперт, который однажды устал от ручной рутины и начал всё автоматизировать.
+Создаю AI-продукты и автоматизирую бизнес-процессы. Определяю требования, координирую тестирование и доработки, лично участвую в прототипировании, проверке и улучшении решений.
 
----
+Рассматриваю частичную или проектную удалённую работу.
 
-## 🔥 Что строю сейчас
+## Работающие проекты
 
-| Проект | Описание | Статус |
+| Проект | Что делает | Статус |
 |---|---|---|
-| [Транскрибатор SellersHelp](https://t.me/sellershelp_voice_bot) | Клиентский Telegram-бот: аудио/видео → транскрипция с таймкодами + конспект. YouTube, youtube.ru, VK Видео, Дзен, Яндекс Диск и др. | 🟢 Запущен |
-| [Бот управления репутацией на маркетплейсах](https://t.me/sellershelp_reviews_bot) | WB и Ozon: двухэтапный AI (стратег + писатель на Claude), брендовые подписи, алерты рейтинга, Excel-аналитика | 🟡 Тестирование |
-| Генератор договоров | MAX-бот для SellersHelp: ИНН → автореквизиты DaData + диалог по тарифу и условиям → готовый DOCX за 1 мин вместо 10+ | 🟢 Запущен |
-| [SellersHelp AI](https://sellershelpai.ru) | Экосистема SaaS-инструментов для продавцов WB и Ozon: юнит-калькулятор, ИИ-бот отзывов, Тегатор (team-mention-bot) | 🔵 В разработке |
+| [Два транскрибатора Sellers Help](https://t.me/sellershelp_voice_bot) | Внутренний и клиентский Telegram-боты: аудио и видео → расшифровка с таймкодами и конспект | Работают |
+| [Бот отзывов и аналитики Sellers Help AI](https://t.me/sellershelp_reviews_bot) | Работа с отзывами Wildberries и Ozon: подтверждение перед публикацией или полный автопилот | В эксплуатации в кабинетах Sellers Help; доступен 7-дневный бесплатный период |
+| Генератор договоров для Sellers Help | Реквизиты по ИНН, диалог по условиям и формирование договора в DOCX | Работает во внутреннем процессе |
 
----
+## Опыт
 
-## 🚀 Запущено
+- Более 25 лет в продажах и управлении
+- С 2019 года работаю с маркетплейсами
+- Системно применяю AI с мая 2025 года
+- Создаю сайты, ботов, автоматизации и AI-продукты с апреля 2026 года
+- Сооснователь Sellers Help
 
-- 🌐 **[yurazlab.ru](https://yurazlab.ru)** — портфолио и услуги
-- 🏢 **[sellershelp.ru](https://sellershelp.ru)** — сайт агентства по маркетплейсам
-- 🎙 **[Транскрибатор SellersHelp](https://t.me/sellershelp_voice_bot)** — клиентский транскрибатор аудио и видео с конспектом
-- 📄 **Генератор договоров** — внутренний MAX-бот SellersHelp: реквизиты по ИНН + диалог по условиям → DOCX за 1 минуту
-- 🛒 **[SellersHelp AI](https://sellershelpai.ru)** — экосистема SaaS-инструментов для продавцов WB и Ozon
+## Контакты
 
----
-
-## 🛠 Стек
-
-![Next.js](https://img.shields.io/badge/Next.js-000?style=flat&logo=nextdotjs)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
-![Claude API](https://img.shields.io/badge/Claude_API-D97757?style=flat)
-![Telegram](https://img.shields.io/badge/Telegram_Bot-2CA5E0?style=flat&logo=telegram&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000?style=flat&logo=vercel)
-
----
-
-## 📬 Контакт
-
-- 💬 Telegram: [@yurazlab](https://t.me/yurazlab)
-- 📧 Email: yurazlab@gmail.com
-- 🌐 Сайт: [yurazlab.ru](https://yurazlab.ru)
-
----
-
-> *Строю публично — каждый проект это опыт, каждая ошибка — урок.*
+- [yurazlab.ru](https://yurazlab.ru)
+- [Telegram @yurazlab](https://t.me/yurazlab)
+- [yurazlab@gmail.com](mailto:yurazlab@gmail.com)
+- [Sellers Help AI](https://sellershelpai.ru)
+- [Sellers Help](https://sellershelp.ru)

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Onest, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Onest } from "next/font/google";
 import Script from "next/script";
 import JsonLd from "@/components/JsonLd";
 import "./globals.css";
@@ -23,11 +23,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const siteUrl = "https://yurazlab.ru";
-const title = "Yuraz Lab — AI-продукты для бизнеса";
+const title = "Юрий Зуев — руководитель AI-проектов | Yuraz Lab";
 const description =
-  "Разработка AI-агентов, Telegram-ботов и автоматизаций под ключ. " +
-  "Юрий Зуев: 25+ лет в продажах, сооснователь SellersHelp (600+ клиентов), " +
-  "с 2019 на маркетплейсах. От 35 000 ₽, запуск за 1–4 недели.";
+  "Создание AI-продуктов и автоматизация бизнес-процессов: требования, прототипирование, " +
+  "тестирование и доработки. Частичная или проектная удалённая работа.";
 
 export const metadata: Metadata = {
   title,
@@ -37,15 +36,13 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   keywords: [
-    "AI-разработка",
-    "Telegram-бот с AI",
-    "AI-агент под ключ",
-    "автоматизация бизнеса",
-    "разработка чат-бота",
-    "MVP AI-продукта",
-    "интеграции API",
-    "Yuraz Lab",
+    "руководитель AI-проектов",
+    "AI-продукты для бизнеса",
+    "автоматизация бизнес-процессов",
+    "руководитель AI-продукта",
+    "AI-проект",
     "Юрий Зуев",
+    "Yuraz Lab",
   ],
   authors: [{ name: "Юрий Зуев", url: siteUrl }],
   creator: "Юрий Зуев",
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    type: "website",
+    type: "profile",
     locale: "ru_RU",
     url: siteUrl,
     siteName: "Yuraz Lab",
@@ -62,7 +59,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    site: "@yurazlab",
     creator: "@yurazlab",
   },
 };
@@ -77,7 +73,7 @@ export default function RootLayout({
       lang="ru"
       className={`${inter.variable} ${onest.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-inter bg-dark text-text-base antialiased">
+      <body className="bg-dark font-inter text-text-base antialiased">
         <JsonLd />
         {children}
         <Script id="yandex-metrika" strategy="afterInteractive">

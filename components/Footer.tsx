@@ -1,42 +1,41 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.05] py-10">
-      <div className="container-base flex flex-col gap-6">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-onest font-bold text-text-base">
-            Yuraz<span className="text-accent">Lab</span>
-          </p>
-          <p className="text-text-muted text-sm text-center">
-            © 2026 · Строю публично
-          </p>
-          <div className="flex gap-5">
-            <a
-              href="https://t.me/yurazlab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-muted hover:text-text-base text-sm transition-colors"
-            >
-              Telegram
-            </a>
-            <a
-              href="mailto:yurazlab@gmail.com"
-              className="text-text-muted hover:text-text-base text-sm transition-colors"
-            >
-              Email
-            </a>
-            <a
-              href="https://github.com/yurazlab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-muted hover:text-text-base text-sm transition-colors"
-            >
-              GitHub
-            </a>
-          </div>
+    <footer className="border-t border-white/[0.06] py-8">
+      <div className="container-base flex flex-col gap-5 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-onest font-semibold text-text-base">© 2026 · Юрий Зуев</p>
+          <p className="mt-1 text-xs">ИП Зуев Юрий Васильевич</p>
         </div>
-        <p className="text-text-muted text-xs text-center border-t border-white/[0.05] pt-5">
-          ИП Зуев Юрий Васильевич
-        </p>
+
+        <div className="flex flex-wrap gap-x-5 gap-y-2">
+          <a
+            href="https://t.me/yurazlab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent-light"
+          >
+            Telegram
+          </a>
+          <a href="mailto:yurazlab@gmail.com" className="transition-colors hover:text-accent-light">
+            Email
+          </a>
+          <a
+            href="https://sellershelpai.ru"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent-light"
+          >
+            Sellers Help AI
+          </a>
+          <a
+            href="https://sellershelp.ru"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent-light"
+          >
+            Sellers Help
+          </a>
+        </div>
       </div>
     </footer>
   );

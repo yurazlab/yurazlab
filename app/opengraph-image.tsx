@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Yuraz Lab — AI-продукты для бизнеса";
+export const alt = "Юрий Зуев — руководитель AI-проектов";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,63 +22,41 @@ export default function OpengraphImage() {
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            width: "fit-content",
+            padding: "10px 20px",
+            background: "rgba(255,255,255,0.06)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            borderRadius: "999px",
+            fontSize: "22px",
+            color: "#9B9BBA",
+          }}
+        >
+          <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "#22D3EE" }} />
+          Открыт к работе в команде
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <div style={{ fontSize: "34px", fontWeight: 600, color: "#9B9BBA" }}>Юрий Зуев</div>
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              gap: "12px",
-              padding: "10px 20px",
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,255,255,0.12)",
-              borderRadius: "999px",
-              fontSize: "22px",
-              color: "#9B9BBA",
-            }}
-          >
-            <div
-              style={{
-                width: "10px",
-                height: "10px",
-                borderRadius: "999px",
-                background: "#22D3EE",
-              }}
-            />
-            Открыт для новых проектов
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-          <div
-            style={{
-              fontSize: "84px",
+              flexDirection: "column",
+              fontSize: "78px",
               fontWeight: 800,
               letterSpacing: "-0.03em",
               lineHeight: 1.02,
-              color: "#EDEDF7",
-              display: "flex",
-              flexDirection: "column",
             }}
           >
-            <div>
-              Создаю <span style={{ color: "#818CF8" }}>AI-продукты</span>
-            </div>
-            <div>для бизнеса</div>
+            <div>Руководитель</div>
+            <div style={{ color: "#818CF8" }}>AI-проектов</div>
           </div>
-
-          <div
-            style={{
-              fontSize: "32px",
-              color: "#22D3EE",
-              fontWeight: 500,
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
-            }}
-          >
-            25+ лет в продажах
-            <span style={{ color: "#9B9BBA" }}>→</span>
-            теперь строю AI-продукты
+          <div style={{ fontSize: "30px", color: "#22D3EE", fontWeight: 500 }}>
+            AI-продукты и автоматизация бизнес-процессов
           </div>
         </div>
 
@@ -93,16 +71,8 @@ export default function OpengraphImage() {
             color: "#9B9BBA",
           }}
         >
-          <div
-            style={{
-              fontWeight: 700,
-              color: "#EDEDF7",
-              display: "flex",
-              gap: "2px",
-            }}
-          >
-            <span>Yuraz</span>
-            <span style={{ color: "#6366F1" }}>Lab</span>
+          <div style={{ display: "flex", fontWeight: 700, color: "#EDEDF7" }}>
+            <span>Yuraz</span><span style={{ color: "#6366F1" }}>Lab</span>
           </div>
           <div>yurazlab.ru · t.me/yurazlab</div>
         </div>

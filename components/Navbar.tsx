@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const links = [
-  { label: "Проекты", href: "#projects" },
-  { label: "Услуги", href: "#services" },
-  { label: "Цены", href: "#pricing" },
+  { label: "В команду", href: "#team" },
+  { label: "Кейсы", href: "#projects" },
+  { label: "Для бизнеса", href: "#business" },
   { label: "Обо мне", href: "#about" },
-  { label: "Контакт", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -23,88 +22,61 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-dark/80 backdrop-blur-xl border-b border-white/[0.06]"
-          : ""
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-white/[0.06] bg-dark/80 backdrop-blur-xl" : ""}`}
+      aria-label="Основная навигация"
     >
-      <div className="container-base flex items-center justify-between h-16">
-        <Link href="/" className="font-onest font-bold text-lg tracking-tight">
+      <div className="container-base flex h-16 items-center justify-between">
+        <Link href="/" className="font-onest text-lg font-bold tracking-tight">
           Yuraz<span className="text-accent">Lab</span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map((link) => (
             <Link
-              key={l.href}
-              href={l.href}
-              className="text-text-muted hover:text-text-base text-sm transition-colors duration-200"
+              key={link.href}
+              href={link.href}
+              className="text-sm text-text-muted transition-colors duration-200 hover:text-text-base"
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
         </div>
 
-        <a
-          href="https://t.me/yurazlab"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex btn-primary text-sm py-2.5 px-5"
-        >
-          Написать →
-        </a>
+        <Link href="#contact" className="btn-primary hidden px-5 py-2.5 text-sm md:inline-flex">
+          Связаться
+        </Link>
 
-        {/* Mobile burger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 text-text-muted"
-          onClick={() => setOpen(!open)}
-          aria-label="Меню"
+          className="flex flex-col gap-1.5 p-2 text-text-muted md:hidden"
+          onClick={() => setOpen((value) => !value)}
+          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
-          <span
-            className={`block w-5 h-0.5 bg-current origin-center transition-transform duration-200 ${
-              open ? "rotate-45 translate-y-2" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-current transition-opacity duration-200 ${
-              open ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-current origin-center transition-transform duration-200 ${
-              open ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          />
+          <span className={`block h-0.5 w-5 origin-center bg-current transition-transform duration-200 ${open ? "translate-y-2 rotate-45" : ""}`} />
+          <span className={`block h-0.5 w-5 bg-current transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 w-5 origin-center bg-current transition-transform duration-200 ${open ? "-translate-y-2 -rotate-45" : ""}`} />
         </button>
       </div>
 
-      {/* Mobile dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          open ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
-        } bg-dark/95 backdrop-blur-xl border-t border-white/[0.06]`}
+        id="mobile-menu"
+        className={`overflow-hidden border-t border-white/[0.06] bg-dark/95 backdrop-blur-xl transition-all duration-300 md:hidden ${open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}
       >
-        <div className="container-base py-5 flex flex-col gap-4">
-          {links.map((l) => (
+        <div className="container-base flex flex-col gap-4 py-5">
+          {links.map((link) => (
             <Link
-              key={l.href}
-              href={l.href}
-              className="text-text-muted hover:text-text-base transition-colors text-sm"
+              key={link.href}
+              href={link.href}
+              className="text-sm text-text-muted transition-colors hover:text-text-base"
               onClick={() => setOpen(false)}
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
-          <a
-            href="https://t.me/yurazlab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-sm w-fit mt-2"
-          >
-            Написать →
-          </a>
+          <Link href="#contact" className="btn-primary mt-2 w-fit text-sm" onClick={() => setOpen(false)}>
+            Связаться
+          </Link>
         </div>
       </div>
     </nav>

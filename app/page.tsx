@@ -1,12 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import WhatIs from "@/components/WhatIs";
+import TeamFit from "@/components/TeamFit";
 import CurrentProjects from "@/components/CurrentProjects";
-import Services from "@/components/Services";
-import HowIWork from "@/components/HowIWork";
-import Pricing from "@/components/Pricing";
+import BusinessOffer from "@/components/BusinessOffer";
 import About from "@/components/About";
-import GptTools from "@/components/GptTools";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import StickyTelegramPill from "@/components/StickyTelegramPill";
@@ -17,13 +14,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <WhatIs />
+        <TeamFit />
         <CurrentProjects />
-        <Services />
-        <HowIWork />
-        <Pricing />
+        <BusinessOffer />
         <About />
-        <GptTools />
         <Contact />
       </main>
       <Footer />
