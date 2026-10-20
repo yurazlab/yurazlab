@@ -1,0 +1,13 @@
+[Unit]
+Description=Build and publish new Yuraz Lab main revision
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/yurazlab/deploy.sh
+TimeoutStartSec=15min
+CPUQuota=100%
+MemoryMax=1200M
+MemorySwapMax=256M
+Nice=10
+PrivateTmp=true

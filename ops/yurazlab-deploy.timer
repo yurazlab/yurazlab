@@ -1,0 +1,8 @@
+[Unit]
+Description=Check Yuraz Lab GitHub main for updates
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=2min
+Unit=yurazlab-deploy.service
+[Install]
+WantedBy=timers.target

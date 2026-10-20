@@ -1,0 +1,21 @@
+[Unit]
+Description=Yuraz Lab full Next.js site
+After=network.target
+[Service]
+Type=simple
+User=yurazlab
+Group=yurazlab
+WorkingDirectory=/opt/yurazlab/current
+Environment=NODE_ENV=production
+Environment=HOSTNAME=127.0.0.1
+Environment=PORT=3011
+Environment=NEXT_TELEMETRY_DISABLED=1
+ExecStart=/usr/bin/node /opt/yurazlab/current/server.js
+Restart=always
+RestartSec=5
+MemoryMax=512M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+[Install]
+WantedBy=multi-user.target
