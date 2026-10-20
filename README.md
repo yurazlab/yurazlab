@@ -27,3 +27,7 @@
 - [yurazlab@gmail.com](mailto:yurazlab@gmail.com)
 - [Sellers Help AI](https://sellershelpai.ru)
 - [Sellers Help](https://sellershelp.ru)
+
+## Размещение
+
+Полный сайт переносится на Timeweb Cloud VPS рядом с sellershelp.ru. Автоматические обновления из main и откат описаны в [ops/README.md](ops/README.md).
