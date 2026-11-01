@@ -124,3 +124,12 @@ body::after {
            font-medium transition-all duration-200;
   }
 }
+
+@layer base {
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 5px;
+  }
+  main:focus { outline: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}

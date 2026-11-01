@@ -1,12 +1,6 @@
 import type { MetadataRoute } from "next";
-
+import { caseProjects } from "@/data/projects";
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://yurazlab.ru",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
-    },
-  ];
+  const siteUrl = "https://yurazlab.ru";
+  return [{url:siteUrl,changeFrequency:"monthly",priority:1},{url:`${siteUrl}/projects`,changeFrequency:"monthly",priority:.8}, ...caseProjects.map(project => ({url:`${siteUrl}/cases/${project.caseSlug}`,changeFrequency:"monthly" as const,priority:.7}))];
 }

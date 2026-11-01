@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Юрий Зуев — руководитель AI-проектов";
+export const alt = "Юрий Зуев — AI-инструменты для автоматизации бизнеса";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -37,7 +37,7 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ width: "10px", height: "10px", borderRadius: "999px", background: "#22D3EE" }} />
-          Открыт к работе в команде
+          AI-инструменты · Кейсы · Сотрудничество
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
@@ -46,17 +46,17 @@ export default function OpengraphImage() {
             style={{
               display: "flex",
               flexDirection: "column",
-              fontSize: "78px",
+              fontSize: "64px",
               fontWeight: 800,
               letterSpacing: "-0.03em",
               lineHeight: 1.02,
             }}
           >
-            <div>Руководитель</div>
-            <div style={{ color: "#818CF8" }}>AI-проектов</div>
+            <div style={{ color: "#22D3EE" }}>AI-инструменты</div>
+            <div>для автоматизации бизнеса</div>
           </div>
           <div style={{ fontSize: "30px", color: "#22D3EE", fontWeight: 500 }}>
-            AI-продукты и автоматизация бизнес-процессов
+            Клиенты · Документы · Информация
           </div>
         </div>
 

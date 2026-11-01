@@ -1,72 +1,19 @@
-import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { featuredProjects } from "@/data/projects";
+import { bodyClass, containerClass, eyebrowClass, headingClass, ProjectStatus, sectionClass, textLinkClass } from "@/components/PortfolioUi";
 
 export default function CurrentProjects() {
-  return (
-    <section id="projects" className="section scroll-mt-16 border-t border-white/[0.05]">
-      <div className="container-base">
-        <p className="label mb-4">Кейсы</p>
-        <div className="mb-12 grid gap-5 lg:grid-cols-[1fr_0.7fr] lg:items-end">
-          <h2 className="heading-lg text-text-base">Работающие AI-инструменты и автоматизации</h2>
-          <p className="text-base leading-relaxed text-text-muted lg:justify-self-end">
-            Кейсы ниже — решения для задач Sellers Help, где я сооснователь. В карточках указаны моя роль и фактический статус каждого продукта.
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-6">
-          {featuredProjects.map((project) => (
-            <article
-              key={project.title}
-              className="card p-6 transition-colors duration-300 hover:border-white/[0.16] md:p-8"
-            >
-              <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <span className={`mb-4 inline-flex items-center gap-2 text-xs font-medium ${project.statusColor}`}>
-                    <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                    {project.status}
-                  </span>
-                  <h3 className="heading-md mb-3 text-text-base">{project.title}</h3>
-                  <p className="max-w-4xl text-sm leading-relaxed text-text-muted md:text-base">
-                    {project.summary}
-                  </p>
-                </div>
-
-                {project.links.length > 0 && (
-                  <div className="flex flex-none flex-wrap gap-3 sm:max-w-56 sm:justify-end">
-                    {project.links.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs text-text-muted transition-colors hover:text-accent-light"
-                      >
-                        {link.label}
-                        <ExternalLink size={12} aria-hidden="true" />
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <dl className="grid gap-3 lg:grid-cols-3">
-                <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <dt className="label mb-2">Задача</dt>
-                  <dd className="text-sm leading-relaxed text-text-base">{project.task}</dd>
-                </div>
-                <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <dt className="label mb-2">Моя роль</dt>
-                  <dd className="text-sm leading-relaxed text-text-base">{project.role}</dd>
-                </div>
-                <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <dt className="label mb-2">Текущий статус</dt>
-                  <dd className="text-sm leading-relaxed text-text-base">{project.currentState}</dd>
-                </div>
-              </dl>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="projects" className={sectionClass}><div className={containerClass}>
+    <div className="mb-7 flex flex-col items-start justify-between gap-6 min-[901px]:flex-row min-[901px]:items-end"><div><p className={eyebrowClass}>Задачи и решения</p><h2 className={headingClass}>От рабочего процесса<br />к полезному инструменту</h2><p className={`${bodyClass} mt-4 max-w-[670px]`}>Три примера из одной экосистемы SellersHelp AI. Работа с записями, отзывами и документами знакома и другим бизнесам.</p></div><Link className={`${textLinkClass} shrink-0`} href="/projects">Все проекты →</Link></div>
+    <div>{featuredProjects.map(project => {
+      const reversed = project.id === "reviews";
+      const media = project.id === "contracts" ? undefined : project.evidence;
+      const contracts = project.id === "contracts";
+      return <article key={project.id} aria-labelledby={`case-title-${project.id}`} className={`grid gap-x-9 gap-y-5 border-t border-white/[.14] py-7 last:border-b min-[761px]:py-8 ${contracts ? "grid-cols-[minmax(0,1fr)_80px] min-[761px]:grid-cols-[minmax(0,1fr)_150px]" : "grid-cols-1 min-[761px]:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] min-[761px]:grid-rows-[auto_1fr]"}`}>
+        <div className={`min-w-0 ${contracts ? "col-span-2" : reversed ? "min-[761px]:col-start-2" : "min-[761px]:col-start-1"} row-start-1`}><ProjectStatus project={project} /><h3 id={`case-title-${project.id}`} className="mt-2.5 font-onest text-[25px] font-medium leading-[1.16] tracking-[-.035em] text-[#f4f3fa] min-[901px]:text-[28px]">{project.title}</h3></div>
+        {media ? <figure className={`row-start-2 min-w-0 w-full max-w-[500px] min-[761px]:row-span-2 min-[761px]:row-start-1 min-[761px]:mt-[30px] min-[761px]:max-w-[420px] ${reversed ? "min-[761px]:col-start-1" : "min-[761px]:col-start-2 min-[761px]:justify-self-end"}`}><a className="block overflow-hidden rounded-xl border border-white/10" href={media.file} target="_blank" rel="noopener noreferrer" aria-label={`Увеличить экран: ${project.title}`}><img className="block h-auto w-full" src={media.thumb || media.file} alt={media.alt} width={project.id === "reviews" ? 500 : 520} height={404} /></a><figcaption className="mt-[9px] flex flex-wrap justify-between gap-x-3.5 gap-y-1.5 text-xs text-[#9292a5]"><span>{project.id === "transcription" ? "Транскрибатор · @sellershelp_voice_bot" : "Отзывы · @sellershelp_reviews_bot"}</span><a className="whitespace-nowrap text-[#b8b6ff] underline underline-offset-[3px]" href={media.file} target="_blank" rel="noopener noreferrer">Увеличить ↗</a></figcaption></figure> : <div aria-hidden="true" className="col-start-2 row-start-2 flex items-start justify-center"><div className="relative grid h-[84px] w-16 content-start gap-1.5 rounded-lg border border-[#b8b6ff]/40 bg-[#10111b] px-2.5 pt-5 min-[761px]:h-[110px] min-[761px]:w-[88px] min-[761px]:gap-2 min-[761px]:px-4 min-[761px]:pt-7"><i className="h-0.5 bg-[#b8b6ff]/40" /><i className="h-0.5 bg-[#b8b6ff]/40" /><i className="h-0.5 w-2/3 bg-[#b8b6ff]/40" /><b className="absolute bottom-[9px] left-2.5 text-[10px] font-medium tracking-widest text-[#b8b6ff] min-[761px]:bottom-3 min-[761px]:left-4 min-[761px]:text-xs">DOCX</b></div></div>}
+        <div className={`min-w-0 self-start ${contracts ? "col-start-1 row-start-2" : `row-start-3 min-[761px]:row-start-2 ${reversed ? "min-[761px]:col-start-2" : "min-[761px]:col-start-1"}`}`}><p className={`${bodyClass} max-w-[600px] text-[15px] min-[761px]:text-base`}>{project.purpose}</p><Link className={`${textLinkClass} mt-[19px]`} href={`/cases/${project.caseSlug}`}>Разобрать кейс →</Link></div>
+      </article>;
+    })}</div>
+  </div></section>;
 }
