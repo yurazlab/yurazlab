@@ -1,6 +1,11 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { caseProjects } from "@/data/projects";
 const siteUrl = "https://yurazlab.ru";
 export default function JsonLd() {
+  const pathname = usePathname();
+  if (pathname === "/project-sync" || pathname?.startsWith("/project-sync/")) return null;
   const personId = `${siteUrl}/#person`;
   const graph = { "@context": "https://schema.org", "@graph": [
     { "@type": "Person", "@id": personId, name: "Юрий Зуев", url: siteUrl, image: `${siteUrl}/photo.jpg`, description: "Бизнес-опыт и работа с AI: требования, прототипирование, проверка и внедрение инструментов для автоматизации бизнеса.", email: "mailto:yurazlab@gmail.com", sameAs: ["https://t.me/yurazlab", "https://sellershelpai.ru", "https://sellershelp.ru"], knowsAbout: ["AI-продукты", "Автоматизация бизнес-процессов", "Управление проектами", "Продажи", "Маркетплейсы"] },
