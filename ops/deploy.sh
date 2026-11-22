@@ -28,7 +28,7 @@ for n in {1..30}; do
   sleep 1
 done
 [[ "$ready" == 1 ]]
-for path in / /card /card/contact /robots.txt /sitemap.xml /opengraph-image; do
+for path in / /projects /robots.txt /sitemap.xml /opengraph-image; do
   curl -fsS --max-time 20 "http://127.0.0.1:3012$path" >/dev/null
 done
 systemctl stop yurazlab-candidate.service
